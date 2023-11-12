@@ -31,8 +31,7 @@ public class ContatosController : Controller
 		var contato = await _contatoRepository.ObterContatoPorId(id);
 		return View(contato);
 	}
-
-	
+    
 	[HttpPost]
 	public async Task<JsonResult> Create([FromBody]Contato contato)
 	{

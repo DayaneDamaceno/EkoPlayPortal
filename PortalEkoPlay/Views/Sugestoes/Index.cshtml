@@ -1,0 +1,43 @@
+@using PortalEkoPlay.Enum
+@model IEnumerable<PortalEkoPlay.Infra.Entities.Sugestao>
+
+@{
+    ViewData["Title"] = "Sugestões";
+}
+<h2>Sugestões</h2>
+
+
+@if (Model.Any())
+{
+    <div class="table-responsive">
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Sugestão</th>
+                <th scope="col">Status</th>
+                <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (var sugestao in Model)
+            {
+                <tr>
+                    <th scope="row">@sugestao.Texto</th>
+                    <td>@sugestao.Status</td>
+                    <td>
+                        @* @if (sugestao.Status == StatusSugestao.EmAnalise) *@
+                        @* { *@
+                        @*     <div class="gap-2 d-flex align-items-center  w-100 justify-content-end"> *@
+                        @*         <a class="btn btn-primary" asp-action="EditView" asp-route-id="@sugestao.Id">Aceitar</a> *@
+                        @*         <a class="btn btn-danger" asp-action="DeleteView" asp-route-id="@sugestao.Id">Recusar</a> *@
+                        @*     </div> *@
+                        @*      *@
+                        @* } *@
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+}
