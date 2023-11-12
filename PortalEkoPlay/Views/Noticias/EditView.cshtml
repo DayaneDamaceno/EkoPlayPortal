@@ -1,0 +1,18 @@
+@model PortalEkoPlay.Infra.Entities.Noticia
+
+@{
+    ViewData["Title"] = "Noticias - Editar";
+}
+
+<form asp-action="Edit">
+    <input type="hidden" asp-for="Id">
+    <div class="mb-3">
+        <label for="titulo" class="form-label">Titulo</label>
+        <input type="text" class="form-control" id="titulo" asp-for="Titulo">
+    </div>
+    <div class="mb-3">
+        <label for="conteudo" class="form-label">Conteúdo</label>
+        <textarea class="form-control" id="conteudo" asp-for="Conteudo"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Salvar</button>
+</form>

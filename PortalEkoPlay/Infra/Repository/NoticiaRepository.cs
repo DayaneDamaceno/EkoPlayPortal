@@ -14,11 +14,44 @@ public class NoticiaRepository: INoticiaRepository
 
 	public async Task<IEnumerable<Noticia>> ObterTodasNoticias()
 	{
-		return await _context.Noticias.ToListAsync();
+		return await _context.Noticias.AsNoTracking().ToListAsync();
+	}
+	
+	public async Task<Noticia> ObterNoticiaPorId(Guid id)
+	{
+		return _context.Noticias.Find(id);
+	}
+	
+	public async Task<bool> SalvarNoticia(Noticia noticia)
+	{
+		await _context.AddAsync(noticia);
+		var linhasAfetadas = await _context.SaveChangesAsync();
+		
+		return linhasAfetadas == 1;
+	}
+	
+	public async Task<bool> EditarNoticia(Noticia noticia)
+	{
+		_context.Noticias.Update(noticia);
+		var linhasAfetadas = await _context.SaveChangesAsync();
+
+		return linhasAfetadas == 1;
+	}
+	
+	public async Task<bool> ExcluirNoticia(Noticia noticia)
+	{
+        _context.Noticias?.Remove(noticia);
+		var linhasAfetadas = await _context.SaveChangesAsync();
+		
+		return linhasAfetadas == 1;
 	}
 }
 
 public interface INoticiaRepository
 {
 	Task<IEnumerable<Noticia>> ObterTodasNoticias();
+	Task<Noticia> ObterNoticiaPorId(Guid id);
+	Task<bool> SalvarNoticia(Noticia noticia);
+	Task<bool> EditarNoticia(Noticia noticia);
+	Task<bool> ExcluirNoticia(Noticia noticia);
 }

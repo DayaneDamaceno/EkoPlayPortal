@@ -13,7 +13,7 @@ public static class DbExtension
 		services.AddDbContext<EkoPlayContext>(options =>
 		{
 			options.UseMySql(configuration.GetConnectionString("Default"), new MySqlServerVersion(new Version(8, 0, 26)));
-			// options.UseNpgsql(configuration.GetConnectionString("Default"));
+            
 		});
 
 	}

@@ -1,0 +1,20 @@
+@model PortalEkoPlay.Infra.Entities.Noticia
+
+@{
+    ViewData["Title"] = "Noticias - Criar";
+}
+
+<form asp-action="Delete">
+    <input type="hidden" asp-for="Id">
+    <input type="hidden" asp-for="Titulo">
+    <input type="hidden" asp-for="Conteudo">
+    <h3>Tem certeza que deseja excluir essa noticia?</h3>
+    <h4>Titulo</h4>
+    <p>@Model.Titulo</p>
+    <h4>Conteúdo</h4>
+    <p>@Model.Conteudo</p>
+    <div class="d-flex gap-2 align-items-center">
+        <button type="submit" class="btn btn-danger">Excluir</button>
+        <a class="btn btn-link" asp-action="Index">Voltar para noticias</a>
+    </div>
+</form>
