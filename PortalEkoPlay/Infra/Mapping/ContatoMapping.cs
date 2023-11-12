@@ -20,7 +20,9 @@ public class ContatoMapping
 			entity.Property(x => x.Email).IsRequired();
 			entity.Property(x => x.Assunto);
 			entity.Property(x => x.Mensagem).IsRequired();
-			entity.Property(x => x.DataCriacao).IsRequired();
+			entity.Property(x => x.DataCriacao)
+					.IsRequired()
+					.HasDefaultValueSql("CURRENT_TIMESTAMP");
 		});
 	}
 }
