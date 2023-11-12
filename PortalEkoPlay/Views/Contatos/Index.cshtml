@@ -1,0 +1,33 @@
+@model IEnumerable<PortalEkoPlay.Infra.Entities.Contato>
+
+@{
+    ViewData["Title"] = "Fale Conosco";
+}
+<h2>Contatos com o fale conosco</h2>
+
+<div class="table-responsive">
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Nome</th>
+            <th scope="col">Mensagem</th>
+            <th scope="col"></th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var contatos in Model)
+        {
+            <tr>
+                <th scope="row">@contatos.Nome</th>
+                <td>@contatos.Mensagem</td>
+                <td>
+                    <div class="gap-2 d-flex align-items-center  w-100 justify-content-end">
+                        <a class="btn btn-primary" asp-action="Detail" asp-route-id="@contatos.Id">Visualizar</a>
+                    </div>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>

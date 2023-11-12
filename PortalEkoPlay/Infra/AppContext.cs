@@ -7,6 +7,7 @@ namespace PortalEkoPlay.Infra;
 public partial class EkoPlayContext : DbContext
 {
 	public virtual DbSet<Noticia>? Noticias { get; set; }
+	public virtual DbSet<Contato>? Contatos { get; set; }
 
 	public EkoPlayContext() { }
 
@@ -22,6 +23,7 @@ public partial class EkoPlayContext : DbContext
 	protected override void OnModelCreating(ModelBuilder modelBuilder)
 	{
 		NoticiaMapping.Configure(modelBuilder);
+		ContatoMapping.Configure(modelBuilder);
 
 		OnModelCreatingPartial(modelBuilder);
 	}

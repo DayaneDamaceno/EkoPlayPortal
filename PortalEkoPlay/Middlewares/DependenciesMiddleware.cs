@@ -8,6 +8,7 @@ public static class DependenciesMiddleware
 	{
 		//repositories
 		services.AddScoped<INoticiaRepository, NoticiaRepository>();
+		services.AddScoped<IContatoRepository, ContatoRepository>();
 
 	}
 }

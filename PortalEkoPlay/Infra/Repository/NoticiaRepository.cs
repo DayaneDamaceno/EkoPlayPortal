@@ -24,7 +24,7 @@ public class NoticiaRepository: INoticiaRepository
 	
 	public async Task<bool> SalvarNoticia(Noticia noticia)
 	{
-		await _context.AddAsync(noticia);
+		await _context.Noticias.AddAsync(noticia);
 		var linhasAfetadas = await _context.SaveChangesAsync();
 		
 		return linhasAfetadas == 1;
