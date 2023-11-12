@@ -3,14 +3,16 @@
 @{
     ViewData["Title"] = "Fale Conosco";
 }
-
-<div class="card">
-    <div class="card-header">
-        @Model.Nome - @Model.Email
+@if (Model.Id != Guid.Empty)
+{
+    <div class="card">
+        <div class="card-header">
+            @Model.Nome - @Model.Email
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">@Model.Assunto</h5>
+            <p class="card-text">@Model.Mensagem</p>
+            <small>Enviado em @Model.DataCriacao.ToString("D")</small>
+        </div>
     </div>
-    <div class="card-body">
-        <h5 class="card-title">@Model.Assunto</h5>
-        <p class="card-text">@Model.Mensagem</p>
-        <small>Enviado em @Model.DataCriacao.ToString("D")</small>
-    </div>
-</div>
+}

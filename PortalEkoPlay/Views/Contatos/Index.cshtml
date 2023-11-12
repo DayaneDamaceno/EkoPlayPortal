@@ -5,6 +5,8 @@
 }
 <h2>Contatos com o fale conosco</h2>
 
+@if (Model.Any())
+{
 <div class="table-responsive">
 
     <table class="table">
@@ -31,3 +33,6 @@
         </tbody>
     </table>
 </div>
+    
+}
+
