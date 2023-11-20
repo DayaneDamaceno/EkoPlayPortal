@@ -3,7 +3,7 @@ using PortalEkoPlay.Infra.Entities;
 
 namespace PortalEkoPlay.Infra.Mapping;
 
-public class SugestaoMapping
+public static class SugestaoMapping
 {
 	public static void Configure(ModelBuilder modelBuilder)
 	{

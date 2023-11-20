@@ -8,6 +8,7 @@ public partial class EkoPlayContext : DbContext
 {
 	public virtual DbSet<Noticia>? Noticias { get; set; }
 	public virtual DbSet<Contato>? Contatos { get; set; }
+	public virtual DbSet<Parceiro>? Parceiros { get; set; }
 	public virtual DbSet<Pergunta>? Perguntas { get; set; }
 	public virtual DbSet<Opcao>? Opcoes { get; set; }
 	public virtual DbSet<Sugestao>? Sugestoes { get; set; }
@@ -30,6 +31,7 @@ public partial class EkoPlayContext : DbContext
 		PerguntaMapping.Configure(modelBuilder);
 		OpcaoMapping.Configure(modelBuilder);
 		SugestaoMapping.Configure(modelBuilder);
+		ParceiroMapping.Configure(modelBuilder);
 
 		OnModelCreatingPartial(modelBuilder);
 	}

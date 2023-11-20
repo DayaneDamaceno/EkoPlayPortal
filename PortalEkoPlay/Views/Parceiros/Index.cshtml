@@ -1,0 +1,38 @@
+@model IEnumerable<PortalEkoPlay.Infra.Entities.Parceiro>
+
+@{
+    ViewData["Title"] = "Parceiros";
+}
+
+<h2>Parceiros</h2>
+
+@if (Model.Any())
+{
+    <div class="table-responsive">
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Nome</th>
+                <th scope="col">Email</th>
+                <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (var parceiro in Model)
+            {
+                <tr>
+                    <th scope="row">@parceiro.Nome</th>
+                    <td>@parceiro.Email</td>
+                    @* <td> *@
+                    @*     <div class="gap-2 d-flex align-items-center  w-100 justify-content-end"> *@
+                    @*         <a class="btn btn-danger">Excluir</a> *@
+                    @*         $1$ <a class="btn btn-danger" asp-action="DeleteView" asp-route-id="@parceiro.Id">Excluir</a> #1# *@
+                    @*     </div> *@
+                    @* </td> *@
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+}
